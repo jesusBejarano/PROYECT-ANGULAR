@@ -1,0 +1,47 @@
+<div class="container py-3">
+
+    <div class="row" *ngIf="presenter.artist">
+        <div class="col-2">
+            <img [src]="presenter.artist.images[0] ? presenter.artist.images[0].url:'assets/img-no.png'" class="img-thumbnail img-circle">
+        </div>
+
+        <div class="col">
+            <h3>{{ presenter.artist.name }}</h3>
+            <p>
+                <a [href]="presenter.artist.external_urls.spotify"
+                    target="_blank">Ir a la página del artista</a>
+            </p>
+        </div>
+
+        <div class="col-4 text-right">
+            <a routerLink="/private/" class="btn btn-outline-danger">
+                Regresar
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <table class="table">
+                <tr>
+                    <th width="10%">Foto</th>
+                    <th width="35%">Album</th>
+                    <th width="35%">Canción</th>
+                    <th width="20%">Vista Previa</th>
+                </tr>
+                <tr *ngFor="let track of presenter.tracks">
+                    <td>
+                        <img [src]="track.album.images[0].url" class="img-thumb" height="50">
+                    </td>
+                    <td>{{ track.album.name }}</td>
+                    <td>{{ track.name }}</td>
+                    <td>
+                        <audio *ngIf="track.preview_url" [src]="track.preview_url" controls></audio>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+</div>

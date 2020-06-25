@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between">
+  <a class="navbar-brand" [routerLink]="brandUrl">
+      <img [src]="logo" width="30" height="30" class="d-inline-block align-top" alt="">
+      {{ brand }}
+  </a>
+  <ul class="navbar-nav" *ngIf="options.length" >
+      <li class="nav-item" *ngFor="let option of options" >
+          <a class="nav-link" [routerLink]="option.url">{{ option.title }}</a>
+      </li>
+  </ul>
+</nav>

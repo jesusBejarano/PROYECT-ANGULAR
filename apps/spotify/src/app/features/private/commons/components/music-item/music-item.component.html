@@ -1,0 +1,10 @@
+<div class="card my-2">
+    <img [src]="img" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ name }}</h5>
+        <a *ngFor="let artist of artists" 
+            href="javascript:void(0)"
+            (click)="goArtist.emit(artist.id)"
+            class="badge badge-pill badge-primary mr-1">{{ artist.name }}</a>
+    </div>
+</div>

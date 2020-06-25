@@ -1,0 +1,24 @@
+<div class="container py-3">
+  <form class="row" [formGroup]="presenter.formSearch" (ngSubmit)="presenter.search()">
+    <div class="col-9">
+      <input type="text" formControlName="q" class="form-control" placeholder="Artista...">
+    </div>
+    <div class="col-3">
+      <button class="btn btn-primary" type="submit">Buscar</button>
+    </div>
+  </form>
+
+  <div class="py-3">
+    <div class="row">
+      <div
+        *ngFor="let artist of presenter.artists"
+        class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <app-music-item
+          [img]="artist.images[0]? artist.images[0].url:'assets/img-no.png' "
+          [name]="artist.name"
+          (click)="presenter.goArtist(artist.id)">
+        </app-music-item>
+      </div>
+    </div>
+  </div>
+</div>

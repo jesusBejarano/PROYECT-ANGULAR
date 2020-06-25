@@ -1,0 +1,40 @@
+:host {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px 40px;
+
+  h1 {
+    font-size: 80px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  &.home {
+    background: linear-gradient(
+      0deg,
+      rgba(245, 133, 112, 1) 0%,
+      rgba(248, 194, 70, 1) 100%
+    );
+    display: flex;
+  }
+
+  &.premium {
+    background: #509bf5;
+    text-align: left;
+  }
+
+  &.help {
+    background: linear-gradient(
+      0deg,
+      rgba(50, 74, 185, 1) 0%,
+      rgba(33, 47, 103, 1) 100%
+    );
+  }
+}
